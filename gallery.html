@@ -36,6 +36,51 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* Comment section */
+    .comments {
+      margin-top: 40px;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .comments h2 {
+      color: #f2a654;
+    }
+    .comment-box {
+      background-color: #111;
+      padding: 15px;
+      border: 1px solid #333;
+      margin-top: 10px;
+    }
+    .comment-box p {
+      margin: 5px 0;
+    }
+    .comment-form {
+      margin-top: 20px;
+    }
+    .comment-form input,
+    .comment-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      border: 1px solid #444;
+      font-family: inherit;
+    }
+    .comment-form button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ff3b3b;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .comment-form button:hover {
+      background-color: #cc2e2e;
+    }
   </style>
 </head>
 <body>
@@ -43,11 +88,35 @@
   <p>Submitted anonymously – Kharkiv Oblast, June 2025.</p>
 
   <div class="gallery">
-    <img src="123.png" alt="Glowing dog - top view">
-    <img src="65b817d9-b40b-4a5e-910e-8c375978c700.png" alt="Glowing dog - side view">
-    <img src="65b817d9-b40b-4a5e-910e-8c375978c700.png" alt="Glowing dog - top view again">
+    <img src="123.png" alt="Glowing dog - Image 1">
+    <img src="a6af0a22-df7d-4852-adea-3368b231d3c3.png" alt="Glowing dog - Image 2">
+    <img src="65b817d9-b40b-4a5e-910e-8c375978c700.png" alt="Glowing dog - Image 3">
   </div>
 
-  <p><a href="index.html">← Back to Main Page</a></p>
+  <div class="comments">
+    <h2>Comments</h2>
+
+    <div class="comment-box">
+      <p><strong>U9Chaser</strong> · 2 days ago</p>
+      <p>Looks like bio-luminescence... but it moves like it *knows* it's being watched.</p>
+    </div>
+
+    <div class="comment-box">
+      <p><strong>RedLightDrone</strong> · 1 day ago</p>
+      <p>This matches the footage we saw near the Polish border last month. It's not just in Ukraine anymore.</p>
+    </div>
+
+    <form class="comment-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Anonymous">
+
+      <label for="comment">Comment</label>
+      <textarea id="comment" rows="4" placeholder="What do you see? What do you know?"></textarea>
+
+      <button type="submit" disabled>Post Comment (offline)</button>
+    </form>
+  </div>
+
+  <p style="text-align:center;"><a href="index.html">← Back to Main Page</a></p>
 </body>
 </html>
