@@ -1,31 +1,33 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>U9Chaser Profile</title>
+  <title>UNIT-9 Sighting Gallery</title>
   <style>
     body {
-      background-color: #0d0d0d;
+      background-color: #0a0a0a;
       color: #e0e0e0;
       font-family: 'Courier New', Courier, monospace;
       padding: 20px;
+      text-align: center;
     }
     h1 {
-      color: #f2a654;
-    }
-    .post {
-      background-color: #141414;
-      padding: 15px;
-      margin-top: 20px;
-      border: 1px solid #333;
-    }
-    .post h2 {
       color: #ff3b3b;
-      margin-bottom: 10px;
     }
-    .post time {
-      font-size: 0.9em;
-      color: #888;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 100%;
+      border: 2px solid #333;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00ff00;
+    }
+    p {
+      margin-top: 10px;
     }
     a {
       color: #4db8ff;
@@ -34,22 +36,20 @@
     a:hover {
       text-decoration: underline;
     }
-  </style>
-</head>
-<body>
-  <h1>@U9Chaser</h1>
-  <p><em>Joined May 2025 • Posts: 3 • Following: 0</em></p>
 
-  <div class="post">
-    <h2>COLLAR FOUND – Project Cerberus Confirmed?</h2>
-    <time>June 20, 2025</time>
-    <p>Found near the edge of the restricted zone. Burn marks, heavy corrosion. Tag reads: <code>U9-CN.ALPH1</code> — matches the black-site inventory leaks. Uploaded pics and metadata dump <a href="#">here</a>.</p>
-    <p>Smells like ozone. And something else. Like copper and fur. I left it where I found it.</p>
-  </div>
-
-  <p><a href="gallery.html">← Back to Gallery</a></p>
-</body>
-</html>adding: 15px;
+    .comments {
+      margin-top: 40px;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .comments h2 {
+      color: #f2a654;
+    }
+    .comment-box {
+      background-color: #111;
+      padding: 15px;
       border: 1px solid #333;
       margin-top: 10px;
     }
@@ -96,12 +96,12 @@
     <h2>Comments</h2>
 
     <div class="comment-box">
-      <p><strong>U9Chaser</strong> · 2 days ago</p>
-      <p>Looks like bio-luminescence... but it moves like it *knows* it's being watched.</p>
+      <p><strong><a href="u9chaser.html">U9Chaser</a></strong> · 2 days ago</p>
+      <p>Looks like bio-luminescence... but it moves like it <em>knows</em> it's being watched.</p>
     </div>
 
     <div class="comment-box">
-      <p><strong>RedLightDrone</strong> · 1 day ago</p>
+      <p><strong><a href="redlightdrone.html">RedLightDrone</a></strong> · 1 day ago</p>
       <p>This matches the footage we saw near the Polish border last month. It's not just in Ukraine anymore.</p>
     </div>
 
