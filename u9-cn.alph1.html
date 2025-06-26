@@ -3,48 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restricted Uplink</title>
+  <title>U.S. Department of Threat Containment</title>
   <style>
     body {
-      background-color: #000;
-      color: #00ffcc;
+      background-color: #101010;
+      color: #e6e6e6;
       font-family: 'Courier New', Courier, monospace;
-      padding: 20px;
       margin: 0;
+      padding: 0;
     }
-    h1 {
-      color: #ff3b3b;
+    header {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-bottom: 3px solid #aa0000;
       text-align: center;
-      margin-bottom: 40px;
+    }
+    header h1 {
+      margin: 0;
+      color: #ff0000;
+      font-size: 1.8em;
+    }
+    header p {
+      margin: 5px 0 0 0;
+      font-size: 0.9em;
+      color: #888;
     }
     .terminal {
-      max-width: 700px;
-      margin: auto;
-      padding: 20px;
+      max-width: 720px;
       background-color: #0d0d0d;
-      border: 1px solid #222;
+      padding: 30px;
+      margin: 50px auto;
+      border: 2px solid #222;
+    }
+    h2 {
+      text-align: center;
+      color: #ff3b3b;
     }
     input[type="text"] {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       background-color: #000;
-      color: #00ffcc;
+      color: #e6e6e6;
       border: 1px solid #444;
-      font-family: inherit;
-      margin-bottom: 10px;
+      margin-top: 10px;
+      font-size: 1em;
     }
     button {
-      background-color: #ff3b3b;
-      color: #fff;
-      padding: 10px 20px;
+      background-color: #aa0000;
+      color: white;
       border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
       cursor: pointer;
+      font-size: 1em;
     }
     #log {
       display: none;
       margin-top: 30px;
-      border-top: 1px dashed #444;
+      border-top: 1px dashed #555;
       padding-top: 20px;
+      color: #00ff99;
+    }
+    footer {
+      text-align: center;
+      color: #444;
+      font-size: 0.8em;
+      padding: 20px;
     }
   </style>
   <script>
@@ -59,10 +83,15 @@
   </script>
 </head>
 <body>
-  <h1>RESTRICTED ACCESS</h1>
+  <header>
+    <h1>UNITED STATES DEPARTMENT OF THREAT CONTAINMENT</h1>
+    <p>Level 4 Restricted Uplink Terminal</p>
+  </header>
+
   <div class="terminal">
-    <p>ENTER AUTHORIZATION KEY:</p>
-    <input type="text" id="pw" placeholder="Authorization Required...">
+    <h2>ACCESS AUTHORIZATION REQUIRED</h2>
+    <p>Input valid collar authentication tag:</p>
+    <input type="text" id="pw" placeholder="Enter access code...">
     <button onclick="verifyPassword()">VERIFY</button>
 
     <div id="log">
@@ -72,5 +101,9 @@
       <p>Terminate exposure loop by deactivating Project CERBERUS relay. Location: CLASSIFIED.</p>
     </div>
   </div>
+
+  <footer>
+    Internal Use Only · DTC-Uplink v2.3.4 · Monitored by Operative 7E
+  </footer>
 </body>
 </html>
