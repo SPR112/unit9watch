@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collar Uplink - U9-CN.ALPH1</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      margin: 0;
+    }
+    h1 {
+      color: #ff3b3b;
+      text-align: center;
+    }
+    .terminal {
+      background-color: #0d0d0d;
+      padding: 20px;
+      border: 1px solid #222;
+      max-width: 700px;
+      margin: 40px auto;
+    }
+    .terminal p {
+      margin: 0.5em 0;
+    }
+    code {
+      color: #39ff14;
+    }
+    audio {
+      width: 100%;
+      margin-top: 20px;
+    }
+    a {
+      color: #4db8ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Uplink :: U9-CN.ALPH1</h1>
+
+  <div class="terminal">
+    <p><strong>ACCESS GRANTED</strong></p>
+    <p>Collar uplink received from field agent node [ECHO-5]</p>
+    <p>Tag signature: <code>U9-CN.ALPH1</code></p>
+    <p>Decrypting audio stream...</p>
+
+    <audio controls>
+      <source src="audio/dog_voice_signal.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <p style="margin-top: 20px;"><strong>Memo:</strong> If vocal mimicry persists, initiate fallback protocol [GREGOR].</p>
+  </div>
+
+  <div class="footer">
+    <p><a href="index.html">← Return to Main Site</a></p>
+  </div>
+</body>
+</html>
