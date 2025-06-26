@@ -46,7 +46,42 @@
       font-size: 0.9em;
       color: #444;
     }
+    input[type="text"] {
+      background-color: #000;
+      color: #00ffcc;
+      border: 1px solid #444;
+      padding: 10px;
+      width: 100%;
+      margin-top: 15px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    button {
+      background-color: #ff3b3b;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      margin-top: 10px;
+      cursor: pointer;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    #log-access {
+      margin-top: 30px;
+      display: none;
+      border-top: 1px dashed #444;
+      padding-top: 20px;
+    }
   </style>
+  <script>
+    function verifyPassword() {
+      const input = document.getElementById("pw").value.trim().toUpperCase();
+      const correct = "U9CNALPH1";
+      if (input === correct) {
+        document.getElementById("log-access").style.display = "block";
+      } else {
+        alert("ACCESS DENIED");
+      }
+    }
+  </script>
 </head>
 <body>
   <h1>Uplink :: U9-CN.ALPH1</h1>
@@ -62,7 +97,18 @@
       Your browser does not support the audio element.
     </audio>
 
-    <p style="margin-top: 20px;"><strong>Memo:</strong> If vocal mimicry persists, initiate fallback protocol [GREGOR].</p>
+    <p style="margin-top: 20px;"><strong>MEMO:</strong> If vocal mimicry persists, initiate fallback protocol [GREGOR].</p>
+
+    <h3>ENTER PASSWORD TO UNLOCK FIELD LOGS</h3>
+    <input type="text" id="pw" placeholder="ENTER COLLAR TAG (NO DASHES)">
+    <button onclick="verifyPassword()">UNLOCK</button>
+
+    <div id="log-access">
+      <h4>-- FIELD LOG UPLINK --</h4>
+      <p>June 10, 2025 – Motion detected 7km northeast of Kharkiv perimeter. Infrared picked up bipedal gait pattern.</p>
+      <p>June 11, 2025 – Multiple failed containment signals from Collar ID: U9-CN.ALPH1</p>
+      <p>June 12, 2025 – Unconfirmed footage of audio mimicry. Incident escalated to Level 3.</p>
+    </div>
   </div>
 
   <div class="footer">
