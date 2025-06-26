@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collar Uplink - U9-CN.ALPH1</title>
+  <title>Restricted Uplink</title>
   <style>
     body {
-      background-color: #000000;
+      background-color: #000;
       color: #00ffcc;
       font-family: 'Courier New', Courier, monospace;
       padding: 20px;
@@ -15,68 +15,46 @@
     h1 {
       color: #ff3b3b;
       text-align: center;
+      margin-bottom: 40px;
     }
     .terminal {
-      background-color: #0d0d0d;
-      padding: 20px;
-      border: 1px solid #222;
       max-width: 700px;
-      margin: 40px auto;
-    }
-    .terminal p {
-      margin: 0.5em 0;
-    }
-    code {
-      color: #39ff14;
-    }
-    audio {
-      width: 100%;
-      margin-top: 20px;
-    }
-    a {
-      color: #4db8ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #444;
+      margin: auto;
+      padding: 20px;
+      background-color: #0d0d0d;
+      border: 1px solid #222;
     }
     input[type="text"] {
+      width: 100%;
+      padding: 10px;
       background-color: #000;
       color: #00ffcc;
       border: 1px solid #444;
-      padding: 10px;
-      width: 100%;
-      margin-top: 15px;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: inherit;
+      margin-bottom: 10px;
     }
     button {
       background-color: #ff3b3b;
-      border: none;
+      color: #fff;
       padding: 10px 20px;
-      color: white;
-      margin-top: 10px;
+      border: none;
       cursor: pointer;
-      font-family: 'Courier New', Courier, monospace;
     }
-    #log-access {
-      margin-top: 30px;
+    #log {
       display: none;
+      margin-top: 30px;
       border-top: 1px dashed #444;
       padding-top: 20px;
     }
   </style>
   <script>
-    function verifyPassword() {
-      const input = document.getElementById("pw").value.trim().toUpperCase();
-      const correct = "U9CNALPH1";
-      if (input === correct) {
-        document.getElementById("log-access").style.display = "block";
+    async function verifyPassword() {
+      const input = document.getElementById("pw").value.trim();
+      const hash = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(input));
+      const hex = Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+      const secretHash = "e81b82d8d71691c4c7ac8370937682f94a6d0d21dbd013abdcf0d8672d1a0401"; // SHA-256 of correct password
+      if (hex === secretHash) {
+        document.getElementById("log").style.display = "block";
       } else {
         alert("ACCESS DENIED");
       }
@@ -84,35 +62,18 @@
   </script>
 </head>
 <body>
-  <h1>Uplink :: U9-CN.ALPH1</h1>
-
+  <h1>RESTRICTED ACCESS</h1>
   <div class="terminal">
-    <p><strong>ACCESS GRANTED</strong></p>
-    <p>Collar uplink received from field agent node [ECHO-5]</p>
-    <p>Tag signature: <code>U9-CN.ALPH1</code></p>
-    <p>Decrypting audio stream...</p>
+    <p>ENTER AUTHORIZATION KEY:</p>
+    <input type="text" id="pw" placeholder="Authorization Required...">
+    <button onclick="verifyPassword()">VERIFY</button>
 
-    <audio controls>
-      <source src="audio/dog_voice_signal.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-
-    <p style="margin-top: 20px;"><strong>MEMO:</strong> If vocal mimicry persists, initiate fallback protocol [GREGOR].</p>
-
-    <h3>ENTER PASSWORD TO UNLOCK FIELD LOGS</h3>
-    <input type="text" id="pw" placeholder="ENTER COLLAR TAG (NO DASHES)">
-    <button onclick="verifyPassword()">UNLOCK</button>
-
-    <div id="log-access">
-      <h4>-- FIELD LOG UPLINK --</h4>
-      <p>June 10, 2025 – Motion detected 7km northeast of Kharkiv perimeter. Infrared picked up bipedal gait pattern.</p>
-      <p>June 11, 2025 – Multiple failed containment signals from Collar ID: U9-CN.ALPH1</p>
-      <p>June 12, 2025 – Unconfirmed footage of audio mimicry. Incident escalated to Level 3.</p>
+    <div id="log">
+      <h3>— GREGOR FIELD LOG —</h3>
+      <p>[CONFIDENTIAL] Retrieval Unit Bravo-6 confirms: subject responds to canine-centric auditory frequencies. Pattern D (Ultrasonic pitch 19.7kHz) causes disorientation.</p>
+      <p>Visual deterrent ineffective. Thermal imaging advised. Do NOT engage physically.</p>
+      <p>Terminate exposure loop by deactivating Project CERBERUS relay. Location: CLASSIFIED.</p>
     </div>
-  </div>
-
-  <div class="footer">
-    <p><a href="index.html">← Return to Main Site</a></p>
   </div>
 </body>
 </html>
