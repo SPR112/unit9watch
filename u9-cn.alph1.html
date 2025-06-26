@@ -48,12 +48,9 @@
     }
   </style>
   <script>
-    async function verifyPassword() {
+    function verifyPassword() {
       const input = document.getElementById("pw").value.trim();
-      const hash = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(input));
-      const hex = Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
-      const secretHash = "9d27ccba3366d3bb53f268688f35cd10edc64a21234b5e3f8e1347a4e42d5c6c"; // SHA-256 of "U9-CN.ALPH1"
-      if (hex === secretHash) {
+      if (input === "U9-CN.ALPH1") {
         document.getElementById("log").style.display = "block";
       } else {
         alert("ACCESS DENIED");
