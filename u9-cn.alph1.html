@@ -6,27 +6,29 @@
   <title>U.S. Department of Threat Containment</title>
   <style>
     body {
-      background-color: #101010;
+      background: radial-gradient(ellipse at center, #101010 0%, #000000 100%);
       color: #e6e6e6;
       font-family: 'Courier New', Courier, monospace;
       margin: 0;
       padding: 0;
     }
     header {
-      background-color: #1a1a1a;
+      background: linear-gradient(90deg, #220000 0%, #1a1a1a 100%);
       padding: 20px;
       border-bottom: 3px solid #aa0000;
       text-align: center;
+      box-shadow: 0 0 15px #aa0000;
     }
     header h1 {
       margin: 0;
       color: #ff0000;
-      font-size: 1.8em;
+      font-size: 2em;
+      letter-spacing: 1px;
     }
     header p {
       margin: 5px 0 0 0;
       font-size: 0.9em;
-      color: #888;
+      color: #aaa;
     }
     .terminal {
       max-width: 720px;
@@ -34,19 +36,22 @@
       padding: 30px;
       margin: 50px auto;
       border: 2px solid #222;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
     }
     h2 {
       text-align: center;
       color: #ff3b3b;
+      margin-bottom: 10px;
     }
     input[type="text"] {
       width: 100%;
       padding: 12px;
       background-color: #000;
-      color: #e6e6e6;
+      color: #00ffcc;
       border: 1px solid #444;
       margin-top: 10px;
       font-size: 1em;
+      box-shadow: inset 0 0 5px #00ffcc;
     }
     button {
       background-color: #aa0000;
@@ -56,6 +61,10 @@
       margin-top: 15px;
       cursor: pointer;
       font-size: 1em;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #cc0000;
     }
     #log {
       display: none;
@@ -63,12 +72,31 @@
       border-top: 1px dashed #555;
       padding-top: 20px;
       color: #00ff99;
+      background-color: #070707;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    #log h3 {
+      color: #ff3b3b;
+      border-bottom: 1px solid #ff3b3b;
+      padding-bottom: 5px;
     }
     footer {
       text-align: center;
       color: #444;
       font-size: 0.8em;
       padding: 20px;
+      border-top: 1px solid #111;
+      background-color: #0a0a0a;
+    }
+    .blink {
+      animation: blink 1.2s infinite;
+      color: #ff0000;
+      font-weight: bold;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
   </style>
   <script>
@@ -85,7 +113,7 @@
 <body>
   <header>
     <h1>UNITED STATES DEPARTMENT OF THREAT CONTAINMENT</h1>
-    <p>Level 4 Restricted Uplink Terminal</p>
+    <p><span class="blink">RESTRICTED TERMINAL - LEVEL 4 ACCESS ONLY</span></p>
   </header>
 
   <div class="terminal">
@@ -103,7 +131,7 @@
   </div>
 
   <footer>
-    Internal Use Only · DTC-Uplink v2.3.4 · Monitored by Operative 7E
+    Internal Use Only · DTC-Uplink v2.3.4 · Surveillance Node #038A · Monitored by Operative 7E
   </footer>
 </body>
 </html>
